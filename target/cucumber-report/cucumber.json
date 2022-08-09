@@ -1,0 +1,293 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2022-08-09T18:09:43.574Z",
+        "line": 5,
+        "name": "Listar todos los usuarios",
+        "description": "",
+        "id": "pruebas-al-servicio-usuarios;listar-todos-los-usuarios",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1280000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "listar usuarios",
+            "match": {
+              "location": "definitions.servicioUsuarioDefinition.listarUsuarios()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 9000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "mostrar el listado de usuarios",
+            "match": {
+              "location": "definitions.servicioUsuarioDefinition.mostrarElListadoDeUsuarios()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "validar codigo de respuesta \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 28
+                }
+              ],
+              "location": "definitions.servicioUsuarioDefinition.validarCodigoDeRespuesta(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 358000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "validar numero de registros",
+            "match": {
+              "location": "definitions.servicioUsuarioDefinition.validarNumeroDeRegistros()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@todoslosservicios"
+          },
+          {
+            "name": "@metodoget"
+          },
+          {
+            "name": "@regresion"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-08-09T18:09:45.278Z",
+        "line": 26,
+        "name": "Crear usuario",
+        "description": "",
+        "id": "pruebas-al-servicio-usuarios;crear-usuario",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "que no existe usuario registrado",
+            "match": {
+              "location": "definitions.servicioUsuarioDefinition.queNoExisteUsuarioRegistrado()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1857000000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "registrar datos del usuario",
+            "match": {
+              "location": "definitions.servicioUsuarioDefinition.registrarDatosDelUsuario(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "nombre",
+                  "puesto",
+                  "codigo"
+                ]
+              },
+              {
+                "cells": [
+                  "Luis",
+                  "QA",
+                  "201"
+                ]
+              },
+              {
+                "cells": [
+                  "Jose",
+                  "QA",
+                  "201"
+                ]
+              },
+              {
+                "cells": [
+                  "Pedro",
+                  "QA",
+                  "201"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "validar codigo de respuesta \"201\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"201\"",
+                  "offset": 28
+                }
+              ],
+              "location": "definitions.servicioUsuarioDefinition.validarCodigoDeRespuesta(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "mostrar los datos del registro",
+            "match": {
+              "location": "definitions.servicioUsuarioDefinition.mostrarLosDatosDelRegistro()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@todoslosservicios"
+          },
+          {
+            "name": "@metodopost"
+          },
+          {
+            "name": "@regresion"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-08-09T18:09:47.139Z",
+        "line": 37,
+        "name": "Actualizar usuario",
+        "description": "",
+        "id": "pruebas-al-servicio-usuarios;actualizar-usuario",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "que el usuario este registrado",
+            "match": {
+              "location": "definitions.servicioUsuarioDefinition.queElUsuarioEsteRegistrado()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 523000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "actualizar datos del usuario",
+            "match": {
+              "location": "definitions.servicioUsuarioDefinition.actualizarDatosDelUsuario(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "id",
+                  "nombre",
+                  "puesto",
+                  "codigo"
+                ]
+              },
+              {
+                "cells": [
+                  "2",
+                  "Luis",
+                  "QA",
+                  "200"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "validar codigo de respuesta \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 28
+                }
+              ],
+              "location": "definitions.servicioUsuarioDefinition.validarCodigoDeRespuesta(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "mostrar los datos del registro",
+            "match": {
+              "location": "definitions.servicioUsuarioDefinition.mostrarLosDatosDelRegistro()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@todoslosservicios"
+          },
+          {
+            "name": "@metodoput"
+          },
+          {
+            "name": "@regresion"
+          }
+        ]
+      }
+    ],
+    "name": "Pruebas al servicio usuarios",
+    "description": "",
+    "id": "pruebas-al-servicio-usuarios",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/ServicioUsuarios.feature",
+    "tags": [
+      {
+        "name": "@todoslosservicios",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
